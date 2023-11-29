@@ -8,12 +8,6 @@
 <body>
   <h1>歩数計算プログラム</h1>
 
-  <div id="accelerometer">
-    <p>X: <span id="x"></span></p>
-    <p>Y: <span id="y"></span></p>
-    <p>Z: <span id="z"></span></p>
-  </div>
-
   <div id="deviceorientation">
     <p>北極方向に対する向き: <span id="dir"></span></p>
     <p>前後の傾き角度: <span id="fb"></span></p>
@@ -62,10 +56,10 @@
         document.getElementById("stepCount").innerText = stepCount;
       }
       */
-      if(dir >180){
+      if(dir > 180){
             var deltaOrientation = Math.abs(dir - lastOrientation.alpha) +
-                                Math.abs(fb - lastOrientation.beta) +
-                                Math.abs(lr - lastOrientation.gamma);
+                                   Math.abs(fb - lastOrientation.beta) +
+                                   Math.abs(lr - lastOrientation.gamma);
 
         if (deltaOrientation > 180) {
             stepCount++;
